@@ -1,0 +1,220 @@
+/* Shared print styles for the Free Garden Planner Kit.
+   Targets US Letter (8.5in x 11in) via WeasyPrint. */
+
+@page {
+  size: letter;
+  margin: 0.6in 0.6in 0.75in 0.6in;
+  @bottom-center {
+    content: counter(page) " of " counter(pages);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 8pt;
+    color: #666;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #1f2a1a;
+  margin: 0;
+  font-size: 10.5pt;
+  line-height: 1.45;
+}
+
+h1 {
+  font-size: 22pt;
+  margin: 0 0 0.2em 0;
+  color: #2d4a22;
+}
+
+h2 {
+  font-size: 13pt;
+  margin: 0 0 0.4em 0;
+  color: #2d4a22;
+  border-bottom: 1.5pt solid #2d4a22;
+  padding-bottom: 2pt;
+}
+
+h3 {
+  font-size: 11pt;
+  margin: 0.6em 0 0.3em 0;
+  color: #3a5a2e;
+}
+
+.subtitle {
+  font-size: 11pt;
+  font-style: italic;
+  color: #55654d;
+  margin: 0 0 0.8em 0;
+}
+
+.page-break {
+  page-break-before: always;
+}
+
+/* ---- Getting-started page ---- */
+.getting-started {
+  page-break-after: always;
+}
+
+.getting-started .intro {
+  font-size: 11.5pt;
+}
+
+.getting-started ol,
+.getting-started ul {
+  padding-left: 1.3em;
+}
+
+.getting-started li {
+  margin-bottom: 0.45em;
+}
+
+.tip-box {
+  background: #eef3e6;
+  border: 1pt solid #9db884;
+  border-radius: 6pt;
+  padding: 8pt 10pt;
+  margin: 0.9em 0;
+  font-size: 10pt;
+}
+
+.tip-box strong {
+  color: #2d4a22;
+}
+
+/* ---- Tables (logs, calendars, trackers) ---- */
+table.sheet {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.4em;
+}
+
+table.sheet th,
+table.sheet td {
+  border: 0.8pt solid #6b7f5e;
+  padding: 4pt 5pt;
+  text-align: left;
+  vertical-align: top;
+}
+
+table.sheet th {
+  background: #e4ecda;
+  font-size: 9pt;
+  text-transform: uppercase;
+  letter-spacing: 0.4pt;
+}
+
+table.sheet td.blank {
+  height: 22pt;
+}
+
+table.sheet tr.tall td.blank {
+  height: 34pt;
+}
+
+table.sheet td.center,
+table.sheet th.center {
+  text-align: center;
+}
+
+/* ---- Fill-in fields ---- */
+.fill-line {
+  display: inline-block;
+  border-bottom: 0.8pt solid #4a5a42;
+  min-width: 2.2in;
+  height: 1.15em;
+  vertical-align: bottom;
+}
+
+.fill-line.short {
+  min-width: 1.1in;
+}
+
+.fill-line.long {
+  min-width: 4.2in;
+}
+
+.field-row {
+  margin: 0.5em 0;
+}
+
+.field-row .label {
+  font-weight: bold;
+  margin-right: 6pt;
+}
+
+/* ---- Bed layout grid ---- */
+.bed-grid {
+  border: 1.5pt solid #2d4a22;
+  display: table;
+  width: 6.4in;
+  height: 6.4in;
+  table-layout: fixed;
+}
+
+.bed-grid .grid-row {
+  display: table-row;
+}
+
+.bed-grid .grid-cell {
+  display: table-cell;
+  border: 0.6pt dashed #8aa07a;
+}
+
+/* ---- Watering tracker checkboxes ---- */
+.water-box {
+  width: 12pt;
+  height: 12pt;
+  border: 0.9pt solid #4a5a42;
+  display: inline-block;
+}
+
+td.center .water-box {
+  margin: 0 auto;
+}
+
+/* ---- Worksheet / reflection boxes ---- */
+.answer-box {
+  border: 0.9pt solid #6b7f5e;
+  border-radius: 4pt;
+  min-height: 1.1in;
+  margin: 0.3em 0 0.7em 0;
+}
+
+.answer-box.tall {
+  min-height: 1.7in;
+}
+
+.write-lines p {
+  border-bottom: 0.7pt solid #8aa07a;
+  height: 1.5em;
+  margin: 0 0 0.35em 0;
+}
+
+/* ---- Seed inventory card ---- */
+.inventory-card {
+  border: 1.5pt solid #2d4a22;
+  border-radius: 6pt;
+  padding: 10pt 12pt;
+  margin-bottom: 14pt;
+  page-break-inside: avoid;
+}
+
+.inventory-card .card-title {
+  font-weight: bold;
+  font-size: 12pt;
+  color: #2d4a22;
+  margin-bottom: 6pt;
+}
+
+/* ---- Footer note (unbranded: no names, no logos, no URLs) ---- */
+.footnote {
+  margin-top: 0.8em;
+  font-size: 8.5pt;
+  color: #66705f;
+  font-style: italic;
+}
